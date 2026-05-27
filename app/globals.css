@@ -123,7 +123,7 @@
   --font-mono: "Courier New", Courier, monospace;
   --breakpoint-container: 1160px;
   --breakpoint-tablet: 930px;
-  --breakpoint-menu: 680px;
+  --breakpoint-menu: 988px;
   --breakpoint-mobile: 570px;
   --breakpoint-phone: 500px;
   --breakpoint-small: 400px;
@@ -235,7 +235,9 @@
 
 @layer components {
   .container {
-    @apply mx-auto max-w-[1440px] px-32;
+    max-width: 1440px !important;
+    padding-inline: clamp(30px, 6.67vw, 128px) !important;
+    margin-inline: auto !important;
   }
 
   .inner {
@@ -291,18 +293,6 @@
   }
 }
 
-@media (max-width: 1160px) {
-  @layer components {
-    .container {
-      @apply px-[34px];
-    }
-  }
-}
-
-@media (max-width: 500px) {
-  @layer components {
-    .container {
-      @apply px-[30px];
-    }
-  }
+button {
+  outline: none;
 }
