@@ -85,7 +85,7 @@ export default function Header() {
           >
             <span
               className={cn(
-                "absolute left-0 top-1 h-10 w-10 rounded-full bg-[image:var(--theme-switcher-img),var(--gradient)] bg-center bg-no-repeat transition-transform duration-300 ease-out will-change-transform",
+                "absolute left-0 top-1 h-10 w-10 rounded-full bg-(image:--theme-switcher-bg) bg-center bg-no-repeat transition-transform duration-300 ease-out will-change-transform",
                 isLightTheme && "translate-x-10",
               )}
             />
