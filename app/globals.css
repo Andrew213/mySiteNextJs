@@ -59,13 +59,18 @@
   --theme-switcher-img: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21.53 15.93C21.37 15.66 20.92 15.24 19.8 15.44C19.18 15.55 18.55 15.6 17.92 15.57C15.59 15.47 13.48 14.4 12.01 12.75C10.71 11.3 9.90995 9.40999 9.89995 7.36999C9.89995 6.22999 10.12 5.12999 10.57 4.08999C11.01 3.07999 10.7 2.54999 10.48 2.32999C10.25 2.09999 9.70995 1.77999 8.64995 2.21999C4.55995 3.93999 2.02995 8.03999 2.32995 12.43C2.62995 16.56 5.52995 20.09 9.36995 21.42C10.29 21.74 11.26 21.93 12.26 21.97C12.42 21.98 12.58 21.99 12.74 21.99C16.09 21.99 19.23 20.41 21.21 17.72C21.88 16.79 21.7 16.2 21.53 15.93Z" fill="%23190E30"/></svg>');
   --hero-decor-1: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="93" height="106" viewBox="0 0 93 106" fill="none"><path d="M60.1488 105.747C67.3288 102.37 73.7011 97.4922 78.8362 91.4432C83.9712 85.3942 87.7495 78.3144 89.9162 70.6814C92.083 63.0483 92.5879 55.0394 91.3968 47.1946C90.2058 39.3499 87.3465 31.8517 83.0118 25.2057C78.677 18.5598 72.9676 12.9205 66.2686 8.66827C59.5696 4.41602 52.0366 1.64962 44.1778 0.555625C36.3189 -0.53837 28.3168 0.0654749 20.7111 2.32643C13.1054 4.58738 6.0729 8.45289 0.0878472 13.6623L16.1386 32.103C19.4873 29.1883 23.422 27.0255 27.6774 25.7605C31.9328 24.4955 36.41 24.1577 40.807 24.7697C45.2041 25.3818 49.4188 26.9296 53.1669 29.3088C56.9151 31.6879 60.1095 34.8431 62.5348 38.5615C64.9601 42.28 66.5598 46.4752 67.2262 50.8644C67.8926 55.2535 67.6101 59.7346 66.3978 64.0053C65.1855 68.276 63.0716 72.2371 60.1985 75.6216C57.3254 79.006 53.7601 81.735 49.7429 83.6246L60.1488 105.747Z" fill="url(%23paint0_linear_234_2204)"/><defs><linearGradient id="paint0_linear_234_2204" x1="-18.6046" y1="49.1304" x2="91.6559" y2="61.9211" gradientUnits="userSpaceOnUse"><stop stop-color="%23661EFF"/><stop offset="1" stop-color="%23A91EFF"/></linearGradient></defs></svg>');
   --hero-decor-2: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="112" height="112" viewBox="0 0 112 112" fill="none"><path d="M0.820739 64.8004C2.51472 74.814 6.92384 84.1708 13.5679 91.8518C20.212 99.5328 28.8362 105.243 38.5015 108.362C48.1667 111.48 58.5023 111.887 68.3826 109.538C78.263 107.188 87.3093 102.173 94.5363 95.0373C101.763 87.902 106.894 78.9206 109.369 69.071C111.845 59.2215 111.57 48.8815 108.575 39.1773C105.581 29.473 99.9806 20.7765 92.3851 14.0349C84.7896 7.29325 75.4898 2.76499 65.4987 0.94326L61.1133 24.9943C66.7034 26.0136 71.9066 28.5472 76.1563 32.3191C80.406 36.0911 83.5393 40.9568 85.2149 46.3864C86.8904 51.8159 87.0441 57.6012 85.6591 63.112C84.274 68.6228 81.4034 73.648 77.3599 77.6402C73.3164 81.6324 68.255 84.4386 62.7269 85.7531C57.1988 87.0676 51.416 86.8401 46.0083 85.0953C40.6006 83.3506 35.7753 80.1554 32.0579 75.8579C28.3406 71.5603 25.8736 66.3252 24.9259 60.7226L0.820739 64.8004Z" fill="url(%23paint0_linear_234_2210)"/><defs><linearGradient id="paint0_linear_234_2210" x1="71.4133" y1="2.36053" x2="39.6728" y2="108.726" gradientUnits="userSpaceOnUse"><stop stop-color="%23661EFF"/><stop offset="1" stop-color="%23A91EFF"/></linearGradient></defs></svg>');
+  --icon-scroll: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12" fill="none"><path d="M12.5 4.5L7.97222 9.09317C7.4375 9.63561 6.5625 9.63561 6.02778 9.09317L1.5 4.5" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  --icon-git: url("/github.svg");
+  --icon-tg: url("/tg.svg");
+  --icon-inst: url("/inst.svg");
   --icon-link: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none"><path d="M14.99 18H16.5C19.52 18 22 15.53 22 12.5C22 9.48 19.53 7 16.5 7H14.99" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 7H7.5C4.47 7 2 9.47 2 12.5C2 15.52 4.47 18 7.5 18H9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 12.5H16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-
+  --hero-bg-overlay: transparent;
   --background: var(--bg);
   --foreground: var(--text);
 }
 
 .light-theme {
+  --hero-bg-overlay: rgba(255, 137, 29, 0.1);
   --light: #fff3e8;
   --light-hover: #ffeddd;
   --text: #000;
@@ -95,6 +100,9 @@
   --gradient-text: linear-gradient(90deg, #ff461e 0%, #ffcd1e 70.83%);
   --hero-decor-1: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="93" height="106" viewBox="0 0 93 106" fill="none"><path d="M60.1488 105.747C67.3288 102.37 73.7011 97.4922 78.8362 91.4432C83.9712 85.3942 87.7495 78.3144 89.9162 70.6814C92.083 63.0483 92.5879 55.0394 91.3968 47.1946C90.2058 39.3499 87.3465 31.8517 83.0118 25.2057C78.677 18.5598 72.9676 12.9205 66.2686 8.66827C59.5696 4.41602 52.0366 1.64962 44.1778 0.555625C36.3189 -0.53837 28.3168 0.0654749 20.7111 2.32643C13.1054 4.58738 6.0729 8.45289 0.0878472 13.6623L16.1386 32.103C19.4873 29.1883 23.422 27.0255 27.6774 25.7605C31.9328 24.4955 36.41 24.1577 40.807 24.7697C45.2041 25.3818 49.4188 26.9296 53.1669 29.3088C56.9151 31.6879 60.1095 34.8431 62.5348 38.5615C64.9601 42.28 66.5598 46.4752 67.2262 50.8644C67.8926 55.2535 67.6101 59.7346 66.3978 64.0053C65.1855 68.276 63.0716 72.2371 60.1985 75.6216C57.3254 79.006 53.7601 81.735 49.7429 83.6246L60.1488 105.747Z" fill="url(%23paint0_linear_234_2916)"/><defs><linearGradient id="paint0_linear_234_2916" x1="-18.6046" y1="49.1304" x2="91.6559" y2="61.9211" gradientUnits="userSpaceOnUse"><stop stop-color="%23FF461E"/><stop offset="1" stop-color="%23FFCD1E"/></linearGradient></defs></svg>');
   --hero-decor-2: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="112" height="112" viewBox="0 0 112 112" fill="none"><path d="M0.820739 64.8004C2.51472 74.814 6.92384 84.1708 13.5679 91.8518C20.212 99.5328 28.8362 105.243 38.5015 108.362C48.1667 111.48 58.5023 111.887 68.3826 109.538C78.263 107.188 87.3093 102.173 94.5363 95.0373C101.763 87.902 106.894 78.9206 109.369 69.071C111.845 59.2215 111.57 48.8815 108.575 39.1773C105.581 29.473 99.9806 20.7765 92.3851 14.0349C84.7896 7.29325 75.4898 2.76499 65.4987 0.94326L61.1133 24.9943C66.7034 26.0136 71.9066 28.5472 76.1563 32.3191C80.406 36.0911 83.5393 40.9568 85.2149 46.3864C86.8904 51.8159 87.0441 57.6012 85.6591 63.112C84.274 68.6228 81.4034 73.648 77.3599 77.6402C73.3164 81.6324 68.255 84.4386 62.7269 85.7531C57.1988 87.0676 51.416 86.8401 46.0083 85.0953C40.6006 83.3506 35.7753 80.1554 32.0579 75.8579C28.3406 71.5603 25.8736 66.3252 24.9259 60.7226L0.820739 64.8004Z" fill="url(%23paint0_linear_234_2917)"/><defs><linearGradient id="paint0_linear_234_2917" x1="71.4133" y1="2.36053" x2="39.6728" y2="108.726" gradientUnits="userSpaceOnUse"><stop stop-color="%23FF461E"/><stop offset="1" stop-color="%23FFCD1E"/></linearGradient></defs></svg>');
+  --icon-git: url("/github-light.svg");
+  --icon-tg: url("/tg-light.svg");
+  --icon-inst: url("/inst-light.svg");
   --icon-link: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M14.99 17.5H16.5C19.52 17.5 22 15.03 22 12C22 8.98 19.53 6.5 16.5 6.5H14.99" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 6.5H7.5C4.47 6.5 2 8.97 2 12C2 15.02 4.47 17.5 7.5 17.5H9" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 12H16" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
 
   --background: var(--bg);
@@ -236,8 +244,23 @@
 @layer components {
   .container {
     max-width: 1440px !important;
-    padding-inline: clamp(30px, 6.67vw, 128px) !important;
+    padding-left: 128px;
+    padding-right: 128px;
     margin-inline: auto !important;
+  }
+
+  @media (max-width: 1160px) {
+    .container {
+      padding-left: 34px;
+      padding-right: 34px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .container {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
   }
 
   .inner {
@@ -279,7 +302,7 @@
   }
 
   .light {
-    @apply fixed top-0 -z-20 h-[231px] w-[231px] shrink-0 rounded-[100px] opacity-70 blur-[100px];
+    @apply absolute left-0 top-0 h-[231px] w-[231px] shrink-0 rounded-[100px] opacity-0 blur-[100px];
     background: linear-gradient(
       90deg,
       rgb(102, 31, 255) 0%,

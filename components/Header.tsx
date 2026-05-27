@@ -21,7 +21,7 @@ export default function Header() {
   };
 
   return (
-    <header className="py-[34px]" id="hero">
+    <header className="py-[34px]">
       <div className="container flex items-center justify-between gap-8">
         <button
           aria-label="Открыть меню"
@@ -49,9 +49,9 @@ export default function Header() {
         <nav
           className={cn(
             "min-w-0 flex-1",
-            "max-phone:absolute max-phone:bottom-0 max-phone:left-0 max-phone:top-0 max-phone:z-[9] max-phone:w-screen max-phone:bg-black/90 max-phone:transition-transform max-phone:duration-300 max-phone:ease-out max-phone:will-change-transform",
+            "max-phone:absolute max-phone:left-0 max-phone:bottom-0 max-phone:top-0 max-phone:z-[9] max-phone:w-screen max-phone:bg-black/90 max-phone:ease-out max-phone:will-change-transform",
             isMenuOpen
-              ? "max-phone:translate-x-0"
+              ? "max-phone:translate-x-0 max-phone:transition-transform max-phone:duration-300"
               : "max-phone:-translate-x-full",
           )}
         >
