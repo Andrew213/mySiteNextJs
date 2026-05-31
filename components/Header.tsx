@@ -2,23 +2,17 @@
 
 import { useState } from "react";
 import { cn } from "../lib/utils";
+import { useTheme } from "@/lib/useTheme";
 
 const navItems = [
   { label: "Работы", target: "projects" },
   { label: "Навыки", target: "skills" },
-  { label: "Технологии", target: "tools" },
   { label: "Контакты", target: "contacts" },
 ];
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLightTheme, setIsLightTheme] = useState(false);
-
-  const toggleTheme = (nextIsLightTheme: boolean) => {
-    setIsLightTheme(nextIsLightTheme);
-    document.documentElement.classList.toggle("light-theme", nextIsLightTheme);
-    document.documentElement.classList.toggle("dark-theme", !nextIsLightTheme);
-  };
+  const { isLightTheme, toggleTheme } = useTheme();
 
   return (
     <header className="py-[34px]">
@@ -27,6 +21,7 @@ export default function Header() {
           aria-label="Открыть меню"
           type="button"
           aria-expanded={isMenuOpen}
+          aria-controls="header-navigation"
           onClick={() => setIsMenuOpen((value) => !value)}
           className={cn(
             "[display:none] rounded-xl bg-portfolio-normal px-6 py-3 pl-5 text-xl text-foreground transition duration-500",
@@ -47,6 +42,7 @@ export default function Header() {
         </button>
 
         <nav
+          id="header-navigation"
           className={cn(
             "min-w-0 flex-1",
             "max-phone:absolute max-phone:left-0 max-phone:bottom-0 max-phone:top-0 max-phone:z-[9] max-phone:w-screen max-phone:bg-black/90 max-phone:ease-out max-phone:will-change-transform",
@@ -59,6 +55,7 @@ export default function Header() {
             {navItems.map((item) => (
               <li key={item.target}>
                 <a
+                  href={`#${item.target}`}
                   data-scroll-to={item.target}
                   onClick={() => setIsMenuOpen(false)}
                   className="cursor-pointer whitespace-nowrap text-xl text-foreground max-phone:block max-phone:w-[300px] max-phone:rounded-xl max-phone:bg-portfolio-normal max-phone:py-[15px] max-phone:text-center max-phone:text-white max-phone:transition max-phone:duration-500 max-phone:focus:bg-portfolio-normal"
@@ -92,7 +89,7 @@ export default function Header() {
           </label>
 
           <a
-            href="mailto:a.kochanov31@yandex.ru"
+            href="#contacts"
             className="button whitespace-nowrap !text-white max-phone:hidden"
           >
             <span className="relative pl-7 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:text-xl before:leading-none before:text-white before:content-['+']">

@@ -114,17 +114,18 @@ export default function Hero() {
         <div className="mt-auto mb-[50px] flex justify-between pl-5 max-tablet:pl-0 max-[680px]:mb-[34px] max-phone:mb-10 max-phone:flex-col max-phone:items-center max-phone:justify-center">
           <div className="flex w-[150px] items-center justify-between max-phone:hidden">
             <a
-              data-scroll-to="footer"
-              aria-label="Scroll to footer"
+              href="#contacts"
+              data-scroll-to="contacts"
+              aria-label="Перейти к обсуждению проекта"
               className="relative animate-[scroll-button-bounce_2.4s_ease-in-out_infinite] mb-[3px] block h-[42px] w-[42px] rounded-full bg-(image:--icon-scroll-bg) bg-center bg-no-repeat before:absolute after:animate-[scroll-ring-pulse_2.4s_ease-in-out_infinite_0.25s] before:animate-[scroll-ring-pulse_2.4s_ease-in-out_infinite] before:left-1/2 before:top-1/2 before:-z-[1] before:h-[62px] before:w-[62px] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-(--bubble-dark) before:opacity-20 before:content-[''] after:absolute after:left-1/2 after:top-1/2 after:-z-[1] after:h-[76px] after:w-[76px] after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-(--bubble-dark) after:opacity-20 after:content-['']"
             />
             <span className="block w-20 font-comfortaa-bold text-[10px]">
-              SCROLL TO DOWN
+              ОБСУДИТЬ ПРОЕКТ
             </span>
           </div>
 
           <a
-            href="mailto:a.kochanov31@yandex.ru"
+            href="#contacts"
             className="button z-10 mb-[30px] [display:none] !text-white max-phone:[display:block]"
           >
             <span>Связаться</span>
