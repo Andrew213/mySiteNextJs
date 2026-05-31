@@ -190,7 +190,6 @@ const BackgroundDecor: React.FC = () => {
           themedDepth.minOpacity,
           themedDepth.maxOpacity,
         ),
-        duration: 0.5,
         ease: "power1.out",
       });
       tweenProperty(el, depth);

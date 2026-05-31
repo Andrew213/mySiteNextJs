@@ -317,6 +317,47 @@
   [data-scroll-to] {
     cursor: pointer;
   }
+
+  .project-description {
+    scrollbar-color: var(--normal) transparent;
+    scrollbar-width: thin;
+  }
+
+  .project-description::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .project-description::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: var(--normal);
+  }
+
+  .project-description p:not(:last-child),
+  .project-description ul,
+  .project-description ol {
+    margin-bottom: 12px;
+  }
+
+  .project-description ul,
+  .project-description ol {
+    padding-left: 20px;
+  }
+
+  .project-description ul > li {
+    list-style-type: disc;
+  }
+
+  .project-description ol > li {
+    list-style-type: decimal;
+  }
+
+  .projects-slider .swiper-wrapper {
+    padding-bottom: 20px;
+  }
+
+  .projects-grid:not(.projects-grid-expanded) > :nth-child(n + 4) {
+    display: none;
+  }
 }
 
 @keyframes avatar-bubble-left {

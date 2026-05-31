@@ -1,10 +1,11 @@
 import BackgroundDecor from "@/components/ui/BackgroundDecor";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
+import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
-    <div className="overflow-hidden" data-scroll-container>
+    <div data-scroll-container>
       <BackgroundDecor />
       <div
         data-scroll-section
@@ -14,7 +15,7 @@ export default function Home() {
         <Hero />
       </div>
       <main className="inner" data-scroll-section>
-        <div className="container">123</div>
+        <Projects />
       </main>
     </div>
   );
