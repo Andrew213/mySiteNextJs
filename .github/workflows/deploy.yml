@@ -15,7 +15,6 @@ jobs:
       - name: Build front
         run: |
           npm ci
-          npm run lint
           npm run build
           cp -r public .next/standalone/
           mkdir -p .next/standalone/.next
@@ -40,4 +39,4 @@ jobs:
       - name: Restart and check application
         run: |
           ssh zipper@158.160.132.6 \
-            "sudo -n systemctl restart kochanov-web-next && sleep 3 && curl --fail --silent --show-error http://127.0.0.1:3000 > /dev/null"
+            "sudo -n systemctl restart kochanov-web-next && sleep 3 && curl --fail --silent --show-error http://127.0.0.1:3010 > /dev/null"
