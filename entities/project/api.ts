@@ -75,16 +75,13 @@ function mapWpProjectToProject(wpProject: WpProject): Project {
 
 export async function getProjects(): Promise<Project[]> {
   const projectsUrl =
-    `https://kochanov-web.tech//wp-json/wp/v2/posts` +
+    `https://kochanov-web.tech/wp-json/wp/v2/posts` +
     `?categories=2` +
     `&_fields=id,slug,date,title,acf` +
     `&acf_format=standard`;
 
   const res = await fetch(projectsUrl, {
-    next: {
-      revalidate: 300,
-      tags: ["projects"],
-    },
+    cache: "no-store",
   });
 
   if (!res.ok) {
