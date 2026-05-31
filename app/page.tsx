@@ -6,11 +6,13 @@ import Skills from "@/components/Skills";
 import Contacts from "@/components/Contacts";
 import Education from "@/components/Education";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function Home() {
   return (
     <div data-scroll-container>
       <BackgroundDecor />
+      <ScrollReveal />
       <div
         data-scroll-section
         className="flex min-h-dvh w-full flex-col bg-[url('/bg.png')] bg-cover bg-center bg-no-repeat"

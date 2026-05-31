@@ -15,7 +15,7 @@ const Projects = async () => {
   });
 
   return (
-    <section id="projects">
+    <section id="projects" data-scroll-reveal>
       <div className="mx-auto max-w-360 px-[90px] max-[1395px]:px-0">
         <h2 className="title">Проекты</h2>
 

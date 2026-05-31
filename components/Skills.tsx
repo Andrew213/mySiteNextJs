@@ -54,7 +54,7 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="container inner">
+    <section id="skills" className="container inner" data-scroll-reveal>
       <h2 className="title">Навыки</h2>
 
       <div className="mb-20 grid grid-cols-3 gap-px overflow-hidden rounded-3xl border border-(--border) bg-(--border) max-mobile:grid-cols-1">

@@ -90,6 +90,7 @@ export default function Contacts() {
     <section
       ref={sectionRef}
       id="contacts"
+      data-scroll-reveal
       className="container inner max-phone:px-0"
     >
       <div className="relative overflow-hidden rounded-3xl border border-(--border) bg-portfolio-window px-10 py-12 backdrop-blur-[50px] max-tablet:px-7 max-tablet:py-8 max-phone:rounded-none max-phone:border-x-0 max-phone:px-5 max-phone:py-8">

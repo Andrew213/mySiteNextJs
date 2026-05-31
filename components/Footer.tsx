@@ -17,6 +17,7 @@ export default function Footer() {
     <footer
       id="footer"
       data-scroll-section
+      data-scroll-reveal
       className="border-t border-(--border) bg-portfolio-project"
     >
       <div className="container py-6 max-phone:py-5">

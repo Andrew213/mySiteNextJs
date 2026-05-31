@@ -50,7 +50,7 @@ export default function Education() {
 
   return (
     <>
-      <section id="education" className="container inner">
+      <section id="education" className="container inner" data-scroll-reveal>
         <button
           aria-controls="education-content"
           aria-expanded={isEducationOpen}
