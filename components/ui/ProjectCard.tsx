@@ -46,6 +46,8 @@ export default function ProjectCard({
               src={project.imageUrl}
               alt=""
               aria-hidden="true"
+              loading="lazy"
+              decoding="async"
             />
           )}
           {project.videoUrl ? (
@@ -57,7 +59,7 @@ export default function ProjectCard({
               loop
               muted
               playsInline
-              preload="metadata"
+              preload="none"
             />
           ) : project.imageUrl ? (
             // eslint-disable-next-line @next/next/no-img-element
@@ -65,6 +67,8 @@ export default function ProjectCard({
               className="relative h-full w-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02]"
               src={project.imageUrl}
               alt={project.title}
+              loading="lazy"
+              decoding="async"
             />
           ) : null}
           <span className="absolute left-3 top-3 rounded-full border border-white/20 bg-black/35 px-2.5 py-1 text-xs text-white backdrop-blur-md">

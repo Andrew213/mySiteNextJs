@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "Comfortaa-Regular";
-  font-display: fallback;
+  font-display: swap;
   font-style: normal;
   font-weight: 400;
   src:
@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: "Comfortaa-SemiBold";
-  font-display: fallback;
+  font-display: swap;
   font-style: normal;
   font-weight: 600;
   src:
@@ -22,7 +22,7 @@
 
 @font-face {
   font-family: "Comfortaa-Bold";
-  font-display: fallback;
+  font-display: swap;
   font-style: normal;
   font-weight: 700;
   src:
