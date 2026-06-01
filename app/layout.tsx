@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "locomotive-scroll/locomotive-scroll.css";
 import "./globals.css";
 
 export const metadata: Metadata = {

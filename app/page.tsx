@@ -7,11 +7,13 @@ import Contacts from "@/components/Contacts";
 import Education from "@/components/Education";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import SmoothScroll from "@/components/ui/SmoothScroll";
 
 export default function Home() {
   return (
     <div data-scroll-container>
       <BackgroundDecor />
+      <SmoothScroll />
       <ScrollReveal />
       <div
         data-scroll-section
