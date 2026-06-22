@@ -70,7 +70,7 @@ export default function Hero() {
                 Обсудить проект
               </a>
             </div>
-            <ul className="hero-intro-item mt-8 flex-wrap justify-center gap-2.5 [display:none] max-tablet:flex max-mobile:[display:none]">
+            <ul className="hero-intro-item mt-8 flex-wrap justify-center gap-2.5 hidden max-tablet:flex max-mobile:hidden">
               {["React", "TypeScript", "Next.js", "Node.js"].map(
                 (technology) => (
                   <li
