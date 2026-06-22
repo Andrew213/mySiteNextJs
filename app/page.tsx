@@ -8,6 +8,7 @@ import Education from "@/components/Education";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SmoothScroll from "@/components/ui/SmoothScroll";
+import Services from "@/components/Services";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
         <Hero />
       </div>
       <main className="inner" data-scroll-section>
+        <Services />
         <Projects />
         <Skills />
         <Education />

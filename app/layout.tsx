@@ -3,9 +3,9 @@ import "locomotive-scroll/locomotive-scroll.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Kochanov WebDev",
+  title: "Андрей Кочанов — сайты, веб-приложения и Telegram Mini Apps",
   description:
-    "Web разработчик для Вас и Вашего бизнеса. Создаю современные сайты и веб-приложения.",
+    "Разрабатываю сайты, веб-приложения, Telegram Mini Apps, личные кабинеты и админ-панели для бизнеса на React, Next.js и Node.js.",
   keywords: [
     "frontend developer",
     "web developer",
@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html lang="ru" className="h-full antialiased">
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

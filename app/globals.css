@@ -451,6 +451,27 @@
   }
 }
 
+.hero-title > span {
+  display: inline-block;
+}
+
+.hero-intro-item {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.hero-title-accent {
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-intro-item {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
 button {
   outline: none;
 }

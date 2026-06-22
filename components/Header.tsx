@@ -5,6 +5,7 @@ import { cn } from "../lib/utils";
 import { useTheme } from "@/lib/useTheme";
 
 const navItems = [
+  { label: "Услуги", target: "services" },
   { label: "Работы", target: "projects" },
   { label: "Навыки", target: "skills" },
   { label: "Контакты", target: "contacts" },
@@ -25,18 +26,18 @@ export default function Header() {
           onClick={() => setIsMenuOpen((value) => !value)}
           className={cn(
             "[display:none] rounded-xl bg-portfolio-normal px-6 py-3 pl-5 text-xl text-foreground transition duration-500",
-            "max-phone:relative max-phone:top-2 max-phone:z-[3] max-phone:block max-phone:h-5 max-phone:self-start max-phone:bg-transparent max-phone:outline max-phone:outline-invert",
-            "max-phone:before:absolute max-phone:before:left-0 max-phone:before:-top-1 max-phone:before:h-[3.65px] max-phone:before:w-full max-phone:before:rounded-full max-phone:before:bg-portfolio-normal max-phone:before:transition max-phone:before:duration-300 max-phone:before:content-['']",
-            "max-phone:after:absolute max-phone:after:left-0 max-phone:after:-bottom-1 max-phone:after:h-[3.65px] max-phone:after:w-full max-phone:after:rounded-full max-phone:after:bg-portfolio-normal max-phone:after:transition max-phone:after:duration-300 max-phone:after:content-['']",
+            "max-menu:relative max-menu:top-2 max-menu:z-[3] max-menu:block max-menu:h-5 max-menu:self-start max-menu:bg-transparent max-menu:outline max-menu:outline-invert",
+            "max-menu:before:absolute max-menu:before:left-0 max-menu:before:-top-1 max-menu:before:h-[3.65px] max-menu:before:w-full max-menu:before:rounded-full max-menu:before:bg-portfolio-normal max-menu:before:transition max-menu:before:duration-300 max-menu:before:content-['']",
+            "max-menu:after:absolute max-menu:after:left-0 max-menu:after:-bottom-1 max-menu:after:h-[3.65px] max-menu:after:w-full max-menu:after:rounded-full max-menu:after:bg-portfolio-normal max-menu:after:transition max-menu:after:duration-300 max-menu:after:content-['']",
             isMenuOpen &&
-              "max-phone:z-20 max-phone:before:top-[9px] max-phone:before:rotate-45 max-phone:after:bottom-[7px] max-phone:after:-rotate-45",
+              "max-menu:z-20 max-menu:before:top-[9px] max-menu:before:rotate-45 max-menu:after:bottom-[7px] max-menu:after:-rotate-45",
           )}
         >
           <span
             className={cn(
               "[display:none]",
-              "max-phone:absolute max-phone:left-0 max-phone:top-[9px] max-phone:block max-phone:h-[3.65px] max-phone:w-full max-phone:rounded-full max-phone:bg-portfolio-normal max-phone:transition max-phone:duration-300",
-              isMenuOpen && "max-phone:scale-0",
+              "max-menu:absolute max-menu:left-0 max-menu:top-[9px] max-menu:block max-menu:h-[3.65px] max-menu:w-full max-menu:rounded-full max-menu:bg-portfolio-normal max-menu:transition max-menu:duration-300",
+              isMenuOpen && "max-menu:scale-0",
             )}
           />
         </button>
@@ -45,20 +46,20 @@ export default function Header() {
           id="header-navigation"
           className={cn(
             "min-w-0 flex-1",
-            "max-phone:absolute max-phone:left-0 max-phone:bottom-0 max-phone:top-0 max-phone:z-[9] max-phone:w-screen max-phone:bg-black/90 max-phone:ease-out max-phone:will-change-transform",
+            "max-menu:absolute max-menu:left-0 max-menu:bottom-0 max-menu:top-0 max-menu:z-[9] max-menu:w-screen max-menu:bg-black/90 max-menu:ease-out max-menu:will-change-transform",
             isMenuOpen
-              ? "max-phone:translate-x-0 max-phone:transition-transform max-phone:duration-300"
-              : "max-phone:-translate-x-full",
+              ? "max-menu:translate-x-0 max-menu:transition-transform max-menu:duration-300"
+              : "max-menu:-translate-x-full",
           )}
         >
-          <ul className="flex items-center justify-start gap-[clamp(16px,4vw,72px)] max-menu:flex-col max-menu:items-start max-menu:gap-5 max-phone:absolute max-phone:left-1/2 max-phone:top-1/2 max-phone:-translate-x-1/2 max-phone:-translate-y-1/2">
+          <ul className="flex items-center justify-start gap-[clamp(16px,4vw,72px)] max-menu:absolute max-menu:left-1/2 max-menu:top-1/2 max-menu:flex-col max-menu:-translate-x-1/2 max-menu:-translate-y-1/2 max-menu:items-start max-menu:gap-5">
             {navItems.map((item) => (
               <li key={item.target}>
                 <a
                   href={`#${item.target}`}
                   data-scroll-to={item.target}
                   onClick={() => setIsMenuOpen(false)}
-                  className="cursor-pointer whitespace-nowrap text-xl text-foreground max-phone:block max-phone:w-[300px] max-phone:rounded-xl max-phone:bg-portfolio-normal max-phone:py-[15px] max-phone:text-center max-phone:text-white max-phone:transition max-phone:duration-500 max-phone:focus:bg-portfolio-normal"
+                  className="cursor-pointer whitespace-nowrap text-xl text-foreground max-menu:block max-menu:w-[300px] max-menu:rounded-xl max-menu:bg-portfolio-normal max-menu:py-[15px] max-menu:text-center max-menu:text-white max-menu:transition max-menu:duration-500 max-menu:focus:bg-portfolio-normal"
                 >
                   {item.label}
                 </a>
@@ -67,7 +68,7 @@ export default function Header() {
           </ul>
         </nav>
 
-        <div className="flex shrink-0 items-center justify-end gap-5 max-menu:self-start max-phone:justify-end">
+        <div className="flex shrink-0 items-center justify-end gap-5 max-menu:self-start max-menu:justify-end">
           <input
             type="checkbox"
             id="themeSwitch"
@@ -90,7 +91,7 @@ export default function Header() {
 
           <a
             href="#contacts"
-            className="button whitespace-nowrap !text-white max-phone:hidden"
+            className="button whitespace-nowrap !text-white max-menu:hidden"
           >
             <span className="relative pl-7 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:text-xl before:leading-none before:text-white before:content-['+']">
               Связаться
