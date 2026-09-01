@@ -9,6 +9,7 @@ export type WpProject = {
     project_img?: false | string | null;
     project_video?: false | string | null;
     project_desc?: string;
+    project_desc_en?: string;
     project_git?: string;
     project_prod?: string;
     project_tags?: string;
@@ -20,6 +21,7 @@ export type Project = {
   slug: string;
   title: string;
   description: string;
+  description_eng: string;
   imageUrl: false | string | null;
   videoUrl: false | string | null;
   gitUrl: string | null;

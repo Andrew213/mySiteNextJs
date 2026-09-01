@@ -59,6 +59,7 @@ function mapWpProjectToProject(wpProject: WpProject): Project {
     slug: wpProject.slug,
     title: decodeText(wpProject.title.rendered),
     description: sanitizeDescription(wpProject.acf?.project_desc ?? ""),
+    description_eng: sanitizeDescription(wpProject.acf?.project_desc_en ?? ""),
     imageUrl:
       typeof wpProject.acf?.project_img === "string"
         ? wpProject.acf.project_img
@@ -90,5 +91,8 @@ export async function getProjects(): Promise<Project[]> {
 
   const projects: WpProject[] = await res.json();
 
+  console.log(
+    projects.map((item) => mapWpProjectToProject(item).description_eng),
+  );
   return projects.map(mapWpProjectToProject);
 }

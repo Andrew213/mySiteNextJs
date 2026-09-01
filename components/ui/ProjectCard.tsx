@@ -28,7 +28,7 @@ export default function ProjectCard({
       <article
         className={cn(
           "flex h-full min-h-[594px] flex-col",
-          isFeatured && "min-[1396px]:min-h-[734px]",
+          isFeatured && "min-[1396px]:min-h-[900px]",
           isCompact && "min-[1396px]:min-h-0",
         )}
       >
@@ -107,9 +107,9 @@ export default function ProjectCard({
           <div
             className={cn(
               "project-description mb-4 max-h-[188px] min-h-0 grow overflow-y-auto pr-2 text-base leading-[160%] text-foreground/90",
-              isFeatured && "min-[1396px]:max-h-[248px]",
+              isFeatured && "min-[1396px]:max-h-[500px]",
               isCompact &&
-                "min-[1396px]:max-h-[64px] min-[1396px]:grow-0 min-[1396px]:overflow-y-auto min-[1396px]:pr-2 min-[1396px]:text-sm min-[1396px]:leading-[150%]",
+                "min-[1396px]:max-h-[124px] min-[1396px]:grow-0 min-[1396px]:overflow-y-auto min-[1396px]:pr-2 min-[1396px]:text-sm min-[1396px]:leading-[150%]",
             )}
             dangerouslySetInnerHTML={{ __html: project.description }}
           />

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { cn } from "../lib/utils";
 import { useTheme } from "@/lib/useTheme";
+import Languages from "@/components/ui/Languages";
 
 const navItems = [
   { label: "Услуги", target: "services" },
@@ -67,6 +68,8 @@ export default function Header() {
             ))}
           </ul>
         </nav>
+
+        <Languages />
 
         <div className="flex shrink-0 items-center justify-end gap-5 max-menu:self-start max-menu:justify-end">
           <input
