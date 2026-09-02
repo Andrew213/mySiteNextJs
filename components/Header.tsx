@@ -4,17 +4,26 @@ import { useState } from "react";
 import { cn } from "../lib/utils";
 import { useTheme } from "@/lib/useTheme";
 import Languages from "@/components/ui/Languages";
-
-const navItems = [
-  { label: "Услуги", target: "services" },
-  { label: "Работы", target: "projects" },
-  { label: "Навыки", target: "skills" },
-  { label: "Контакты", target: "contacts" },
-];
+import { useLanguage } from "@/providers/TranslationProvider";
+import { HeaderText } from "@/i8n/Texts";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isLightTheme, toggleTheme } = useTheme();
+  const lang = useLanguage();
+
+  if (!lang) return;
+
+  const dictionary = HeaderText[lang];
+
+  console.log({ dictionary });
+
+  const navItems = [
+    { label: dictionary.services, target: "services" },
+    { label: dictionary.portfolio, target: "projects" },
+    { label: dictionary.skills, target: "skills" },
+    { label: dictionary.contacts, target: "contacts" },
+  ];
 
   return (
     <header className="py-[34px]">
@@ -97,7 +106,7 @@ export default function Header() {
             className="button whitespace-nowrap !text-white max-menu:hidden"
           >
             <span className="relative pl-7 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:text-xl before:leading-none before:text-white before:content-['+']">
-              Связаться
+              {dictionary.hire}
             </span>
           </a>
         </div>

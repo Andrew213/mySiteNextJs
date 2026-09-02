@@ -1,40 +1,27 @@
 "use client";
 
-import { LANGTYPES, LANGUAGES_CODES } from "@/i8n/translations";
-import {
-  createContext,
-  Dispatch,
-  PropsWithChildren,
-  SetStateAction,
-  useContext,
-  useState,
-} from "react";
+import { LANGTYPES } from "@/i8n/translations";
+import { createContext, PropsWithChildren, useContext } from "react";
 
-type TranslationContextType = [LANGTYPES, Dispatch<SetStateAction<LANGTYPES>>];
+const TranslationContext = createContext<LANGTYPES | null>(null);
 
-const TranslationContext = createContext<TranslationContextType | null>(null);
+type Props = PropsWithChildren<{
+  lang: LANGTYPES;
+}>;
 
-export const TranslationProvider: React.FC<PropsWithChildren> = ({
-  children,
-}) => {
-  const [lang, setLang] = useState<LANGTYPES>(() =>
-    navigator.language.toUpperCase() === LANGUAGES_CODES.ru
-      ? LANGUAGES_CODES.ru
-      : LANGUAGES_CODES.en,
-  );
-
+export const TranslationProvider: React.FC<Props> = ({ children, lang }) => {
   return (
-    <TranslationContext.Provider value={[lang, setLang]}>
+    <TranslationContext.Provider value={lang}>
       {children}
     </TranslationContext.Provider>
   );
 };
 
-export function useLanguage(): TranslationContextType {
-  const context = useContext(TranslationContext);
-  if (context === null) {
+export function useLanguage(): LANGTYPES {
+  const lang = useContext(TranslationContext);
+  if (lang === null) {
     throw new Error("useLanguage must be used with TranslationProvider");
   }
 
-  return context;
+  return lang;
 }

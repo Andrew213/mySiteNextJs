@@ -4,11 +4,17 @@ import Image from "next/image";
 import AnimatedTitleAccent from "@/components/ui/AnimatedTitleAccent";
 import gsap from "gsap";
 import { useLayoutEffect, useRef } from "react";
+import { useLanguage } from "@/providers/TranslationProvider";
+import { HeroText } from "@/i8n/Texts";
 
 export default function Hero() {
   const heroRef = useRef<HTMLElement>(null);
 
+  const lang = useLanguage();
+
   useLayoutEffect(() => {
+    if (!lang) return;
+
     const hero = heroRef.current;
 
     if (!hero) return;
@@ -33,7 +39,11 @@ export default function Hero() {
     }, hero);
 
     return () => context.revert();
-  }, []);
+  }, [lang]);
+
+  if (!lang) return;
+
+  const dictionary = HeroText[lang];
 
   return (
     <section ref={heroRef} id="hero" className="relative flex flex-1">
@@ -56,21 +66,19 @@ export default function Hero() {
         <div className="my-auto flex items-center justify-between gap-16 py-10 max-tablet:justify-center max-mobile:py-6">
           <div className="max-w-[680px] max-tablet:text-center">
             <h1 className="hero-intro-item hero-title font-comfortaa-bold text-[clamp(34px,3.5vw,52px)] leading-[1.18] tracking-[-0.035em] max-phone:text-[30px]">
-              <span>Разрабатываю</span> <span>сайты,</span>{" "}
-              <AnimatedTitleAccent>веб-приложения</AnimatedTitleAccent>{" "}
-              <span>и</span> <span>Telegram-сервисы</span>
+              {dictionary.develop},{" "}
+              <AnimatedTitleAccent>{dictionary.apps}</AnimatedTitleAccent>{" "}
+              {dictionary.and}
             </h1>
             <p className="hero-intro-item mt-6 max-w-[640px] text-[clamp(15px,1.1vw,18px)] leading-[1.65] opacity-75 max-tablet:mx-auto">
-              Создаю понятные интерфейсы для людей, стартапов, команд и
-              компаний: личные кабинеты, админ-панели, каталоги, формы и
-              интеграции с внешними сервисами.
+              {dictionary.subtext}
             </p>
             <div className="hero-intro-item mt-8 flex items-center max-tablet:justify-center">
               <a href="#contacts" className="button !text-white">
-                Обсудить проект
+                {dictionary.discuss}
               </a>
             </div>
-            <ul className="hero-intro-item mt-8 flex-wrap justify-center gap-2.5 hidden max-tablet:flex max-mobile:hidden">
+            <ul className="hero-intro-item mt-8 flex-wrap justify-center gap-2.5 [display:none] max-tablet:flex max-mobile:[display:none]">
               {["React", "TypeScript", "Next.js", "Node.js"].map(
                 (technology) => (
                   <li

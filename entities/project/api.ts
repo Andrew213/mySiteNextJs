@@ -91,8 +91,8 @@ export async function getProjects(): Promise<Project[]> {
 
   const projects: WpProject[] = await res.json();
 
-  console.log(
-    projects.map((item) => mapWpProjectToProject(item).description_eng),
-  );
+  // console.log(
+  //   projects.map((item) => mapWpProjectToProject(item).description_eng),
+  // );
   return projects.map(mapWpProjectToProject);
 }
