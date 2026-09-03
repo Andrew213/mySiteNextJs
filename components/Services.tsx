@@ -1,25 +1,13 @@
-const services = [
-  {
-    number: "01",
-    title: "Сайты и веб-приложения",
-    description:
-      "Лендинги, корпоративные сайты, каталоги, формы заявок, личные кабинеты, подключение Web3-кошельков.",
-  },
-  {
-    number: "02",
-    title: "Telegram Mini Apps",
-    description:
-      "Приложения внутри Telegram: интерфейс, авторизация, API и мобильная адаптация.",
-  },
-  {
-    number: "03",
-    title: "Доработка существующих проектов",
-    description:
-      "Разбираюсь в вашем проекте, исправляю ошибки, добавляю новые разделы, подключаю интеграции и помогаю привести интерфейс в порядок.",
-  },
-];
+"use client";
+
+import { ServicesText } from "@/i8n/Texts";
+import { useLanguage } from "@/providers/TranslationProvider";
 
 export default function Services() {
+  const lang = useLanguage();
+
+  const { subtitle, services, title, description } = ServicesText[lang];
+
   return (
     <section
       id="services"
@@ -29,15 +17,14 @@ export default function Services() {
       <div className="mb-12 flex items-end justify-between gap-8 max-mobile:block max-mobile:text-center">
         <div>
           <p className="mb-3 font-comfortaa-semibold text-sm uppercase tracking-[0.2em] text-portfolio-link">
-            Основные направления
+            {subtitle}
           </p>
           <h2 className="font-comfortaa-semibold text-[clamp(34px,4vw,48px)] leading-tight">
-            Что я разрабатываю
+            {title}
           </h2>
         </div>
         <p className="max-w-[430px] text-base leading-relaxed opacity-70 max-mobile:mx-auto max-mobile:mt-5">
-          Помогаю превратить идею, макет или существующий проект в работающий
-          интерфейс с понятной логикой, интеграциями и поддержкой.
+          {description}
         </p>
       </div>
 
