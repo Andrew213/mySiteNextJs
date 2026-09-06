@@ -1,19 +1,19 @@
 import type { Project, WpProject } from "@/entities/project/types";
 
-function decodeText(value: string): string {
-  return value
-    .replace(/&#(\d+);/g, (_, code: string) =>
-      String.fromCodePoint(Number(code)),
-    )
-    .replace(/&#8212;/g, "\u2014")
-    .replace(/&#8211;/g, "\u2013")
-    .replace(/&nbsp;/g, " ")
-    .replace(/&laquo;/g, "\u00ab")
-    .replace(/&raquo;/g, "\u00bb")
-    .replace(/&amp;/g, "&")
-    .replace(/\s+/g, " ")
-    .trim();
-}
+// function decodeText(value: string): string {
+//   return value
+//     .replace(/&#(\d+);/g, (_, code: string) =>
+//       String.fromCodePoint(Number(code)),
+//     )
+//     .replace(/&#8212;/g, "\u2014")
+//     .replace(/&#8211;/g, "\u2013")
+//     .replace(/&nbsp;/g, " ")
+//     .replace(/&laquo;/g, "\u00ab")
+//     .replace(/&raquo;/g, "\u00bb")
+//     .replace(/&amp;/g, "&")
+//     .replace(/\s+/g, " ")
+//     .trim();
+// }
 
 function sanitizeDescription(value: string): string {
   const allowedTags = new Set([
@@ -57,9 +57,12 @@ function mapWpProjectToProject(wpProject: WpProject): Project {
   return {
     id: wpProject.id,
     slug: wpProject.slug,
-    title: decodeText(wpProject.title.rendered),
-    description: sanitizeDescription(wpProject.acf?.project_desc ?? ""),
-    description_eng: sanitizeDescription(wpProject.acf?.project_desc_en ?? ""),
+    title_en: wpProject.acf.title_en || "",
+    title_ru: wpProject.acf.title_ru || "",
+    description_en: sanitizeDescription(wpProject.acf?.description_en ?? ""),
+    description_ru: sanitizeDescription(wpProject.acf?.description_ru ?? ""),
+    link_text_prod_en: wpProject.acf.link_text_prod_en || "",
+    link_text_prod_ru: wpProject.acf.link_text_prod_ru || "",
     imageUrl:
       typeof wpProject.acf?.project_img === "string"
         ? wpProject.acf.project_img
@@ -91,8 +94,5 @@ export async function getProjects(): Promise<Project[]> {
 
   const projects: WpProject[] = await res.json();
 
-  // console.log(
-  //   projects.map((item) => mapWpProjectToProject(item).description_eng),
-  // );
   return projects.map(mapWpProjectToProject);
 }

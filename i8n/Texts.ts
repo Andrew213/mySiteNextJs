@@ -88,3 +88,8 @@ export const ServicesText = {
     ],
   },
 };
+
+export const ProjectsSectionText = {
+  en: { title: "Projects", prod_link: "View Project" },
+  ru: { title: "Проекты", prod_link: "Открыть проект" },
+};

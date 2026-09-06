@@ -9,8 +9,15 @@ import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import Services from "@/components/Services";
+import { LANGTYPES } from "@/i8n/translations";
 
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ lang: LANGTYPES }>;
+}) {
+  const { lang } = await params;
+
   return (
     <div data-scroll-container>
       <BackgroundDecor />
@@ -25,7 +32,7 @@ export default function Home() {
       </div>
       <main className="inner" data-scroll-section>
         <Services />
-        <Projects />
+        <Projects lang={lang} />
         <Skills />
         <Education />
         <Contacts />

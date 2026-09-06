@@ -78,12 +78,12 @@ export default function Hero() {
                 {dictionary.discuss}
               </a>
             </div>
-            <ul className="hero-intro-item mt-8 flex-wrap justify-center gap-2.5 [display:none] max-tablet:flex max-mobile:[display:none]">
+            <ul className="hero-intro-item mt-10 flex-wrap justify-center gap-2.5 [display:none] max-tablet:flex ">
               {["React", "TypeScript", "Next.js", "Node.js"].map(
                 (technology) => (
                   <li
                     key={technology}
-                    className="rounded-full border border-(--border) bg-portfolio-window px-4 py-2 text-xs tracking-wide opacity-80"
+                    className="rounded-full border border-(--border) bg-portfolio-window px-4 py-2 text-xs tracking-wide opacity-80 max-mobile:p-2"
                   >
                     {technology}
                   </li>

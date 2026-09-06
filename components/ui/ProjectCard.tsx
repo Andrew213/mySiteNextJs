@@ -1,19 +1,32 @@
 import type { Project } from "@/entities/project/types";
+import { ProjectsSectionText } from "@/i8n/Texts";
+import { LANGTYPES } from "@/i8n/translations";
 import { cn } from "@/lib/utils";
+
+type ProjectLangKey = Lowercase<LANGTYPES>;
 
 export type ProjectCardProps = {
   index: number;
   project: Project;
+  lang: LANGTYPES;
   variant?: "compact" | "default" | "featured";
 };
 
 export default function ProjectCard({
   index,
   project,
+  lang,
   variant = "default",
 }: ProjectCardProps) {
   const isFeatured = variant === "featured";
   const isCompact = variant === "compact";
+  const projectLangKey = lang.toLowerCase() as ProjectLangKey;
+
+  const title = project[`title_${projectLangKey}`];
+  const description = project[`description_${projectLangKey}`];
+  const prod_link_text = project[`link_text_prod_${projectLangKey}`];
+
+  const dictionary = ProjectsSectionText[projectLangKey];
 
   return (
     <li
@@ -66,7 +79,7 @@ export default function ProjectCard({
             <img
               className="relative h-full w-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02]"
               src={project.imageUrl}
-              alt={project.title}
+              alt={title}
               loading="lazy"
               decoding="async"
             />
@@ -78,7 +91,7 @@ export default function ProjectCard({
 
         <div className="flex grow flex-col px-1 pb-1">
           <h3 className="mb-3 font-comfortaa-semibold text-[26px] leading-tight text-foreground">
-            {project.title}
+            {title}
           </h3>
 
           <div className="mb-4 flex flex-wrap gap-2">
@@ -89,7 +102,7 @@ export default function ProjectCard({
                 target="_blank"
                 rel="noreferrer"
               >
-                Сайт ↗
+                {prod_link_text || dictionary.prod_link} ↗
               </a>
             )}
             {project.gitUrl && (
@@ -99,7 +112,7 @@ export default function ProjectCard({
                 target="_blank"
                 rel="noreferrer"
               >
-                Код ↗
+                GitHub ↗
               </a>
             )}
           </div>
@@ -111,15 +124,10 @@ export default function ProjectCard({
               isCompact &&
                 "min-[1396px]:max-h-[124px] min-[1396px]:grow-0 min-[1396px]:overflow-y-auto min-[1396px]:pr-2 min-[1396px]:text-sm min-[1396px]:leading-[150%]",
             )}
-            dangerouslySetInnerHTML={{ __html: project.description }}
+            dangerouslySetInnerHTML={{ __html: description }}
           />
 
-          <div
-            className={cn(
-              "mt-auto flex flex-wrap gap-2",
-              isCompact && "min-[1396px]:[display:none]",
-            )}
-          >
+          <div className={cn("mt-auto flex flex-wrap gap-2")}>
             {project.tags.map((tag) => (
               <span
                 key={tag}
