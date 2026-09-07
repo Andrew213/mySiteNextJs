@@ -16,8 +16,6 @@ export default function Header() {
 
   const dictionary = HeaderText[lang];
 
-  console.log({ dictionary });
-
   const navItems = [
     { label: dictionary.services, target: "services" },
     { label: dictionary.portfolio, target: "projects" },
