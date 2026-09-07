@@ -1,73 +1,29 @@
-const highlights = [
-  {
-    value: "5+",
-    label: "лет коммерческой разработки",
-  },
-  {
-    value: "Fullstack",
-    label: "интерфейс, API и запуск проекта",
-  },
-  {
-    value: "Под ключ",
-    label: "от идеи до готового приложения",
-  },
-];
+"use client";
 
-const skills = [
-  {
-    title: "Frontend",
-    description:
-      "Разрабатываю сложные интерфейсы: формы, списки, роутинг, состояния загрузки и ошибок, адаптив и анимации.",
-    tags: ["React", "TypeScript", "Next.js", "SSR / SSG", "Vite"],
-  },
-  {
-    title: "B2B и Legacy",
-    description:
-      "Работал с банковскими и XaaS-интерфейсами. Мигрировал ExtJS на React, поддерживал Razor + Kendo, улучшал UX и производительность.",
-    tags: ["Ant Design", "Kendo", "ExtJS", "Performance", "UI / UX"],
-  },
-  {
-    title: "Telegram Apps",
-    description:
-      "Создавал мобильные TMA-сценарии: авторизация, кошельки, темы, локализация, навигация и работа в ограничениях Telegram WebApp.",
-    tags: ["TMA", "JWT / OTP", "i18next", "Crowdin", "Mobile UX"],
-  },
-  {
-    title: "Web3 и TON",
-    description:
-      "Интегрировал кошельки и смарт-контракты: подключение пользователя, балансы, транзакции, игровые механики и токеномика.",
-    tags: ["TonConnect", "Ton-core", "Wagmi", "Smart contracts", "JETON"],
-  },
-  {
-    title: "Архитектура и Data",
-    description:
-      "Проектирую UI-слои и работу с данными: кеширование, инвалидация, API-интеграции и предсказуемое состояние приложения.",
-    tags: ["Redux", "Effector", "MobX MST", "TanStack Query", "REST"],
-  },
-  {
-    title: "Backend и Delivery",
-    description:
-      "Усиливаю fullstack-направление: Node.js и NestJS, REST API, базы данных, контейнеризация и базовая эксплуатация приложений.",
-    tags: ["Node.js", "NestJS", "PostgreSQL", "Docker", "GitHub Actions"],
-  },
-];
+import { SkillsSectionText } from "@/i8n/Texts";
+import { useLanguage } from "@/providers/TranslationProvider";
 
 export default function Skills() {
+  const lang = useLanguage();
+
+  const highlights = SkillsSectionText.highlights[lang];
+  const skills = SkillsSectionText.skills[lang];
+
   return (
     <section id="skills" className="container inner" data-scroll-reveal>
-      <h2 className="title">Навыки</h2>
+      <h2 className="title">{SkillsSectionText[lang].title}</h2>
 
       <div className="mb-20 grid grid-cols-3 gap-px overflow-hidden rounded-3xl border border-(--border) bg-(--border) max-mobile:grid-cols-1">
         {highlights.map((highlight) => (
           <div
-            key={highlight.value}
+            key={highlight.title}
             className="bg-background/90 px-7 py-6 text-center backdrop-blur-xl"
           >
             <p className="mb-2 bg-(image:--gradient-text) bg-clip-text font-comfortaa-semibold text-4xl text-transparent">
-              {highlight.value}
+              {highlight.title}
             </p>
             <p className="text-sm leading-[150%] text-foreground/75">
-              {highlight.label}
+              {highlight.description}
             </p>
           </div>
         ))}

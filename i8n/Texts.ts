@@ -90,6 +90,211 @@ export const ServicesText = {
 };
 
 export const ProjectsSectionText = {
-  en: { title: "Projects", prod_link: "View Project" },
-  ru: { title: "Проекты", prod_link: "Открыть проект" },
+  en: {
+    title: "Projects",
+    prod_link: "View Project",
+    viewMoreButton: "View more",
+  },
+  ru: {
+    title: "Проекты",
+    prod_link: "Открыть проект",
+    viewMoreButton: "Раскрыть список",
+  },
+};
+
+export const SkillsSectionText = {
+  en: { title: "Skills" },
+  ru: { title: "Навыки" },
+
+  highlights: {
+    en: [
+      {
+        title: "5+",
+        description: "years of commercial development",
+      },
+      {
+        title: "Fullstack",
+        description: "UI, APIs, and product delivery",
+      },
+      {
+        title: "End-to-end",
+        description: "from idea to a production-ready application",
+      },
+    ],
+
+    ru: [
+      {
+        title: "5+",
+        description: "лет коммерческой разработки",
+      },
+      {
+        title: "Fullstack",
+        description: "интерфейс, API и запуск проекта",
+      },
+      {
+        title: "Под ключ",
+        description: "от идеи до готового приложения",
+      },
+    ],
+  },
+  skills: {
+    en: [
+      {
+        title: "Frontend",
+
+        description:
+          "I build complex interfaces: forms, lists, routing, loading and error states, responsive layouts, and animations.",
+
+        tags: ["React", "TypeScript", "Next.js", "SSR / SSG", "Vite"],
+      },
+      {
+        title: "B2B & Legacy",
+
+        description:
+          "Worked with banking and XaaS interfaces. Migrated ExtJS applications to React, maintained Razor + Kendo solutions, and improved UX and performance.",
+
+        tags: ["Ant Design", "Kendo", "ExtJS", "Performance", "UI / UX"],
+      },
+      {
+        title: "Telegram Apps",
+
+        description:
+          "Built mobile-first TMA flows including authentication, wallets, themes, localization, navigation, and work within Telegram WebApp constraints.",
+
+        tags: ["TMA", "JWT / OTP", "i18next", "Crowdin", "Mobile UX"],
+      },
+      {
+        title: "Web3 & TON",
+
+        description:
+          "Integrated wallets and smart contracts, including user connection, balances, transactions, game mechanics, and tokenomics.",
+
+        tags: ["TonConnect", "Ton-core", "Wagmi", "Smart contracts", "JETTON"],
+      },
+      {
+        title: "Architecture & Data",
+
+        description:
+          "Design UI layers and data flows, including caching, invalidation, API integrations, and predictable application state management.",
+
+        tags: ["Redux", "Effector", "MobX MST", "TanStack Query", "REST"],
+      },
+      {
+        title: "Backend & Delivery",
+
+        description:
+          "Expanding my full-stack skills with Node.js and NestJS, REST APIs, databases, containerization, and basic application deployment and operations.",
+
+        tags: ["Node.js", "NestJS", "PostgreSQL", "Docker", "GitHub Actions"],
+      },
+    ],
+    ru: [
+      {
+        title: "Frontend",
+        description:
+          "Разрабатываю сложные интерфейсы: формы, списки, роутинг, состояния загрузки и ошибок, адаптив и анимации.",
+        tags: ["React", "TypeScript", "Next.js", "SSR / SSG", "Vite"],
+      },
+      {
+        title: "B2B и Legacy",
+        description:
+          "Работал с банковскими и XaaS-интерфейсами. Мигрировал ExtJS на React, поддерживал Razor + Kendo, улучшал UX и производительность.",
+        tags: ["Ant Design", "Kendo", "ExtJS", "Performance", "UI / UX"],
+      },
+      {
+        title: "Telegram Apps",
+        description:
+          "Создавал мобильные TMA-сценарии: авторизация, кошельки, темы, локализация, навигация и работа в ограничениях Telegram WebApp.",
+        tags: ["TMA", "JWT / OTP", "i18next", "Crowdin", "Mobile UX"],
+      },
+      {
+        title: "Web3 и TON",
+        description:
+          "Интегрировал кошельки и смарт-контракты: подключение пользователя, балансы, транзакции, игровые механики и токеномика.",
+        tags: ["TonConnect", "Ton-core", "Wagmi", "Smart contracts", "JETON"],
+      },
+      {
+        title: "Архитектура и Data",
+        description:
+          "Проектирую UI-слои и работу с данными: кеширование, инвалидация, API-интеграции и предсказуемое состояние приложения.",
+        tags: ["Redux", "Effector", "MobX MST", "TanStack Query", "REST"],
+      },
+      {
+        title: "Backend и Delivery",
+        description:
+          "Усиливаю fullstack-направление: Node.js и NestJS, REST API, базы данных, контейнеризация и базовая эксплуатация приложений.",
+        tags: ["Node.js", "NestJS", "PostgreSQL", "Docker", "GitHub Actions"],
+      },
+    ],
+  },
+};
+
+export const StudySectionText = {
+  en: {
+    title: "Professional Development",
+    description: "I continuously improve my skills",
+
+    programs: [
+      {
+        subtitle: "Yandex Practicum",
+        title: "Middle Frontend Developer",
+        tags: ["React & SSR", "TypeScript", "Architecture", "Testing"],
+        hours: "360 hours",
+        year: "2023",
+        document: {
+          src: "/certificates/yandex-middle-frontend.pdf",
+          type: "pdf",
+        },
+        linkText: "View document",
+        documentType: "Professional Development Certificate",
+      },
+      {
+        subtitle: "Yandex Practicum",
+        title: "Node.js Backend for Frontend Developers",
+        tags: ["Node.js", "NestJS", "PostgreSQL", "Deployment"],
+        hours: "180 hours",
+        linkText: "View document",
+        year: "2026",
+        document: {
+          src: "/certificates/yandex-node-backend.pdf#toolbar=0&view=Fit",
+          type: "pdf",
+        },
+        documentType: "Professional Development Certificate",
+      },
+    ],
+  },
+
+  ru: {
+    title: "Профессиональное развитие",
+    description: "Продолжаю развиваться",
+
+    programs: [
+      {
+        subtitle: "Яндекс Практикум",
+        title: "Middle frontend-разработчик",
+        tags: ["React и SSR", "TypeScript", "Архитектура", "Тестирование"],
+        hours: "360 часов",
+        year: "2023",
+        document: {
+          src: "/certificates/yandex-middle-frontend.pdf",
+          type: "pdf",
+        },
+        linkText: "Открыть документ",
+        documentType: "Удостоверение о повышении квалификации",
+      },
+      {
+        subtitle: "Яндекс Практикум",
+        title: "Бэкенд на Node.js для frontend-разработчиков",
+        tags: ["Node.js", "NestJS", "PostgreSQL", "Деплой"],
+        hours: "180 часов",
+        linkText: "Открыть документ",
+        year: "2026",
+        document: {
+          src: "/certificates/yandex-node-backend.pdf#toolbar=0&view=Fit",
+          type: "pdf",
+        },
+        documentType: "Удостоверение о повышении квалификации",
+      },
+    ],
+  },
 };

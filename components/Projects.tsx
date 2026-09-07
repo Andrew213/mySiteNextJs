@@ -22,7 +22,7 @@ const Projects = async ({ lang }: { lang: LANGTYPES }) => {
 
   return (
     <section id="projects" data-scroll-reveal>
-      <div className="mx-auto max-w-360 px-[90px] max-[1395px]:px-0">
+      <div className="mx-auto max-w-360 px-[70px] pb-[110px]  max-[1395px]:px-0">
         <h2 className="title">{title}</h2>
 
         <ProjectsList>

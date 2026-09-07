@@ -1,36 +1,22 @@
 "use client";
 
+import { StudySectionText } from "@/i8n/Texts";
+import { useLanguage } from "@/providers/TranslationProvider";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const programs = [
-  {
-    year: "2023",
-    hours: "360 часов",
-    title: "Middle frontend-разработчик",
-    topics: ["React и SSR", "TypeScript", "Архитектура", "Тестирование"],
-    document: {
-      src: "/certificates/yandex-middle-frontend.jpeg",
-      type: "image",
-    },
-  },
-  {
-    year: "2026",
-    hours: "180 часов",
-    title: "Бэкенд на Node.js для frontend-разработчиков",
-    topics: ["Node.js", "NestJS", "PostgreSQL", "Деплой"],
-    document: {
-      src: "/certificates/yandex-node-backend.pdf#toolbar=0&view=Fit",
-      type: "pdf",
-    },
-  },
-] as const;
-
-type Program = (typeof programs)[number];
+type Program =
+  (typeof StudySectionText)[keyof typeof StudySectionText]["programs"][number];
 
 export default function Education() {
   const [activeProgram, setActiveProgram] = useState<Program | null>(null);
   const [isEducationOpen, setIsEducationOpen] = useState(false);
+
+  const lang = useLanguage();
+
+  const programs = StudySectionText[lang].programs;
+
+  const dictionary = StudySectionText[lang];
 
   useEffect(() => {
     if (!activeProgram) return;
@@ -59,14 +45,16 @@ export default function Education() {
           onClick={() => setIsEducationOpen((currentValue) => !currentValue)}
         >
           <h2 className="font-comfortaa-semibold text-3xl leading-tight text-foreground max-phone:text-xl">
-            Дополнительное обучение
+            {dictionary.title}
           </h2>
 
           <span className="flex size-12 shrink-0 items-center justify-center rounded-full border border-(--border-link) bg-portfolio-project transition-[background-color] duration-300 group-hover:bg-background/50 max-phone:size-10">
             <span
               aria-hidden="true"
               className={`block size-3 -translate-y-0.5 border-b-2 border-r-2 border-portfolio-link transition-transform duration-500 ${
-                isEducationOpen ? "rotate-[225deg]" : "rotate-45"
+                isEducationOpen
+                  ? "rotate-[225deg] translate-y-0.5"
+                  : "rotate-45"
               }`}
             />
           </span>
@@ -81,103 +69,94 @@ export default function Education() {
           <div className="min-h-0 overflow-hidden">
             <div className="mb-10 flex items-end justify-between gap-8 pt-10 max-mobile:flex-col max-mobile:items-start max-mobile:gap-4">
               <h3 className="font-comfortaa-semibold text-5xl leading-tight text-foreground max-mobile:text-4xl">
-              Продолжаю развиваться
+                {dictionary.description}
               </h3>
-
-              <div className="shrink-0 text-right max-mobile:text-left">
-                <p className="bg-(image:--gradient-text) bg-clip-text font-comfortaa-semibold text-6xl text-transparent max-mobile:text-5xl">
-                  540
-                </p>
-                <p className="text-sm leading-[150%] text-foreground/65">
-                  часов практического обучения
-                </p>
-              </div>
             </div>
 
             <ul className="grid grid-cols-2 gap-[30px] max-tablet:grid-cols-1">
-          {programs.map((program, index) => (
-            <li
-              key={program.title}
-              className="group relative overflow-hidden rounded-3xl border border-(--border) bg-portfolio-window p-7 backdrop-blur-[50px] transition-[transform,background-color] duration-300 hover:-translate-y-2 hover:bg-portfolio-project max-phone:p-5"
-            >
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute -right-12 -top-16 h-40 w-40 rounded-full bg-(image:--gradient-decor-bubble) opacity-15 blur-[55px]"
-              />
-
-              <div className="relative mb-7 grid grid-cols-[minmax(0,1fr)_150px] gap-6 max-phone:grid-cols-1">
-                <div>
-                  <p className="mb-2 text-xs text-foreground/55">
-                    Яндекс Практикум
-                  </p>
-                  <h3 className="mb-5 font-comfortaa-semibold text-2xl leading-[135%] text-foreground max-phone:text-xl">
-                    {program.title}
-                  </h3>
-
-                  <span className="rounded-full border border-(--border) bg-background/50 px-3 py-1.5 text-xs text-foreground/75">
-                    {program.year}
-                  </span>
-                </div>
-
-                <button
-                  aria-label={`Открыть диплом: ${program.title}`}
-                  className="relative aspect-[4/3] overflow-hidden rounded-xl border border-(--border) bg-background/70 transition-transform duration-300 group-hover:scale-[1.03] max-phone:w-full"
-                  type="button"
-                  onClick={() => setActiveProgram(program)}
+              {programs.map((program, index) => (
+                <li
+                  key={program.title}
+                  className="group relative overflow-hidden rounded-3xl border border-(--border) bg-portfolio-window p-7 backdrop-blur-[50px] transition-[transform,background-color] duration-300 hover:-translate-y-2 hover:bg-portfolio-project max-phone:p-5"
                 >
-                  {program.document.type === "image" ? (
-                    <Image
-                      className="h-full w-full object-cover"
-                      src={program.document.src}
-                      alt=""
-                      width={300}
-                      height={225}
-                    />
-                  ) : (
-                    <span className="flex h-full flex-col items-center justify-center gap-2 px-3 text-center">
-                      <span className="font-comfortaa-semibold text-2xl text-portfolio-link">
-                        PDF
-                      </span>
-                      <span className="text-[10px] leading-[140%] text-foreground/60">
-                        Удостоверение о повышении квалификации
-                      </span>
-                    </span>
-                  )}
-                </button>
-              </div>
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -right-12 -top-16 h-40 w-40 rounded-full bg-(image:--gradient-decor-bubble) opacity-15 blur-[55px]"
+                  />
 
-              <div className="relative mb-6 h-px bg-(--border)" />
+                  <div className="relative mb-7 grid grid-cols-[minmax(0,1fr)_150px] gap-6 max-phone:grid-cols-1">
+                    <div>
+                      <p className="mb-2 text-xs text-foreground/55">
+                        {program.subtitle}
+                      </p>
+                      <h3 className="mb-5 font-comfortaa-semibold text-2xl leading-[135%] text-foreground max-phone:text-xl">
+                        {program.title}
+                      </h3>
 
-              <div className="relative flex items-end justify-between gap-6 max-phone:flex-col max-phone:items-start">
-                <ul className="flex flex-wrap gap-2">
-                  {program.topics.map((topic) => (
-                    <li
-                      key={topic}
-                      className="rounded-full border border-(--border-link) bg-portfolio-project px-3 py-1.5 text-xs text-foreground/80"
+                      <span className="rounded-full border border-(--border) bg-background/50 px-3 py-1.5 text-xs text-foreground/75">
+                        {program.year}
+                      </span>
+                    </div>
+
+                    <button
+                      aria-label={`Открыть диплом: ${program.title}`}
+                      className="relative aspect-[4/3] overflow-hidden rounded-xl border border-(--border) bg-background/70 transition-transform duration-300 group-hover:scale-[1.03] max-phone:w-full"
+                      type="button"
+                      onClick={() => setActiveProgram(program)}
                     >
-                      {topic}
-                    </li>
-                  ))}
-                </ul>
+                      {program.document.type === "image" ? (
+                        <Image
+                          className="h-full w-full object-cover"
+                          src={program.document.src}
+                          alt=""
+                          width={300}
+                          height={225}
+                        />
+                      ) : (
+                        <span className="flex h-full flex-col items-center justify-center gap-2 px-3 text-center">
+                          <span className="font-comfortaa-semibold text-2xl text-portfolio-link">
+                            PDF
+                          </span>
+                          <span className="text-[10px] leading-[140%] text-foreground/60">
+                            {program.documentType}
+                          </span>
+                        </span>
+                      )}
+                    </button>
+                  </div>
 
-                <p className="shrink-0 font-comfortaa-semibold text-lg text-portfolio-link">
-                  {program.hours}
-                </p>
-              </div>
+                  <div className="relative mb-6 h-px bg-(--border)" />
 
-              <button
-                className="relative mt-6 text-sm text-portfolio-link transition-colors duration-300 hover:text-foreground"
-                type="button"
-                onClick={() => setActiveProgram(program)}
-              >
-                Открыть документ ↗
-              </button>
+                  <div className="relative flex items-end justify-between gap-6 max-phone:flex-col max-phone:items-start">
+                    <ul className="flex flex-wrap gap-2">
+                      {program.tags.map((topic) => (
+                        <li
+                          key={topic}
+                          className="rounded-full border border-(--border-link) bg-portfolio-project px-3 py-1.5 text-xs text-foreground/80"
+                        >
+                          {topic}
+                        </li>
+                      ))}
+                    </ul>
 
-              <span className="pointer-events-none absolute bottom-[-22px] right-5 font-comfortaa-semibold text-[88px] leading-none text-foreground/[0.035]">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-            </li>
-          ))}
+                    <p className="shrink-0 font-comfortaa-semibold text-lg text-portfolio-link">
+                      {program.hours}
+                    </p>
+                  </div>
+
+                  <button
+                    className="relative mt-6 text-sm text-portfolio-link transition-colors duration-300 hover:text-foreground"
+                    type="button"
+                    onClick={() => setActiveProgram(program)}
+                  >
+                    {program.linkText} ↗
+                  </button>
+
+                  <span className="pointer-events-none absolute bottom-[-22px] right-5 font-comfortaa-semibold text-[88px] leading-none text-foreground/[0.035]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
