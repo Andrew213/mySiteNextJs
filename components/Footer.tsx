@@ -1,17 +1,14 @@
 "use client";
 
+import { FooterSectionText } from "@/i8n/Texts";
 import { useTheme } from "@/lib/useTheme";
-
-const navItems = [
-  { label: "Обо мне", target: "hero" },
-  { label: "Работы", target: "projects" },
-  { label: "Навыки", target: "skills" },
-  { label: "Обучение", target: "education" },
-  { label: "Контакты", target: "contacts" },
-];
+import { useLanguage } from "@/providers/TranslationProvider";
 
 export default function Footer() {
   const { isLightTheme, toggleTheme } = useTheme();
+  const lang = useLanguage();
+
+  const dictionary = FooterSectionText[lang];
 
   return (
     <footer
@@ -22,13 +19,13 @@ export default function Footer() {
     >
       <div className="container py-6 max-phone:py-5">
         <p className="mb-3 font-comfortaa-semibold text-xl text-foreground max-mobile:text-center max-phone:text-lg">
-          Перейти к
+          {dictionary.title}
         </p>
 
         <div className="flex items-center justify-between gap-5 max-mobile:flex-col">
           <nav aria-label="Навигация в подвале" className="max-mobile:w-full">
             <ul className="flex overflow-hidden rounded-full border border-(--border) bg-portfolio-window max-mobile:grid max-mobile:grid-cols-2 max-mobile:gap-2 max-mobile:overflow-visible max-mobile:rounded-none max-mobile:border-0 max-mobile:bg-transparent max-small:grid-cols-1">
-              {navItems.map((item) => (
+              {dictionary.navItems.map((item) => (
                 <li
                   key={item.target}
                   className="border-l border-(--border) first:border-l-0 max-mobile:border-l-0"

@@ -298,3 +298,62 @@ export const StudySectionText = {
     ],
   },
 };
+
+export const ContactSectionText = {
+  en: {
+    label: "Hire me",
+    title: "Have an idea? Let’s discuss it.",
+    description:
+      "Tell me briefly about your project. I’ll clarify the details and suggest the next step.",
+
+    projectTypes: ["Website", "Web Application", "Telegram Mini App", "Other"],
+
+    telegramButton: "Message me on Telegram",
+
+    chat: {
+      title: "New Project",
+      userMessage: "Hi! I’d like to discuss a project.",
+      reply: "Great. What kind of project are you planning to launch?",
+    },
+  },
+
+  ru: {
+    label: "Заказать разработку",
+    title: "Есть идея? Давайте обсудим.",
+    description:
+      "Расскажите о задаче в двух словах. Я уточню детали и предложу следующий шаг.",
+
+    projectTypes: ["Сайт", "Web-приложение", "Telegram Mini App", "Другое"],
+
+    telegramButton: "Написать в Telegram",
+
+    chat: {
+      title: "Новый проект",
+      userMessage: "Здравствуйте! Хочу обсудить разработку.",
+      reply: "Отлично. Какой проект вы планируете запустить?",
+    },
+  },
+};
+
+export const FooterSectionText = {
+  en: {
+    title: "Go to",
+    navItems: [
+      { label: "About me", target: "hero" },
+      { label: "Projects", target: "projects" },
+      { label: "Skills", target: "skills" },
+      { label: "Prof. Development", target: "education" },
+      { label: "Contacts", target: "contacts" },
+    ],
+  },
+  ru: {
+    title: "Перейти к",
+    navItems: [
+      { label: "Обо мне", target: "hero" },
+      { label: "Работы", target: "projects" },
+      { label: "Навыки", target: "skills" },
+      { label: "Обучение", target: "education" },
+      { label: "Контакты", target: "contacts" },
+    ],
+  },
+};

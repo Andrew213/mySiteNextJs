@@ -3,20 +3,25 @@
 import { gsap } from "gsap";
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-
-const projectTypes = ["Сайт", "Web-приложение", "Telegram Mini App", "Другое"];
+import { useLanguage } from "@/providers/TranslationProvider";
+import { ContactSectionText } from "@/i8n/Texts";
 
 const telegramUser = "digital5irat";
 const email = "a.kochanov31@yandex.ru";
 
 export default function Contacts() {
-  const [selectedType, setSelectedType] = useState(projectTypes[0]);
+  const lang = useLanguage();
+
+  const dictionary = ContactSectionText[lang];
+  const [selectedType, setSelectedType] = useState(dictionary.projectTypes[0]);
   const sectionRef = useRef<HTMLElement>(null);
   const chatRef = useRef<HTMLDivElement>(null);
   const selectedMessageRef = useRef<HTMLParagraphElement>(null);
+
   const telegramText = encodeURIComponent(
-    `Здравствуйте! Хочу обсудить разработку: ${selectedType}.`,
+    `${dictionary.chat.userMessage} ${selectedType}.`,
   );
+
   const telegramUrl = `https://t.me/${telegramUser}?text=${telegramText}`;
 
   useEffect(() => {
@@ -100,19 +105,18 @@ export default function Contacts() {
         />
         <div className="relative grid grid-cols-[minmax(0,1fr)_minmax(340px,0.9fr)] items-center gap-12 max-tablet:grid-cols-1 max-tablet:gap-8">
           <div className="max-tablet:text-center">
-            <p className="mb-3 font-comfortaa-semibold text-sm text-portfolio-link max-phone:text-xs">
-              Заказать разработку
+            <p className="mb-3 font-comfortaa-semibold text-portfolio-link max-phone:text-xs">
+              {dictionary.label}
             </p>
             <h2 className="mb-5 max-w-[680px] font-comfortaa-semibold text-5xl leading-tight text-foreground max-tablet:mx-auto max-mobile:text-4xl max-phone:text-[34px]">
-              Есть идея? Давайте обсудим.
+              {dictionary.title}
             </h2>
             <p className="mb-7 max-w-[620px] text-base leading-[170%] text-foreground/75 max-tablet:mx-auto max-phone:text-sm max-phone:leading-[165%]">
-              Расскажите о задаче в двух словах. Я уточню детали и предложу
-              следующий шаг.
+              {dictionary.description}
             </p>
 
             <div className="mb-8 flex flex-wrap gap-2 max-tablet:justify-center max-phone:grid max-phone:grid-cols-2">
-              {projectTypes.map((projectType) => (
+              {dictionary.projectTypes.map((projectType) => (
                 <button
                   key={projectType}
                   className={cn(
@@ -139,7 +143,7 @@ export default function Contacts() {
                   aria-hidden="true"
                   className="h-6 w-6 bg-(image:--icon-tg) bg-contain bg-center bg-no-repeat"
                 />
-                Написать в Telegram
+                {dictionary.telegramButton}
               </a>
               <a
                 className="flex items-center gap-2 rounded-xl border border-(--border) bg-portfolio-project px-5 py-3 text-sm text-foreground transition-colors duration-300 hover:bg-portfolio-window max-phone:w-full max-phone:justify-center max-phone:px-3 max-phone:text-xs"
@@ -162,7 +166,7 @@ export default function Contacts() {
               <span className="h-2.5 w-2.5 rounded-full bg-portfolio-label" />
               <span className="h-2.5 w-2.5 rounded-full bg-portfolio-light-active" />
               <span className="ml-auto text-xs text-foreground/55">
-                Новый проект
+                {dictionary.chat.title}
               </span>
             </div>
 
@@ -171,13 +175,13 @@ export default function Contacts() {
                 data-contact-message
                 className="max-w-[86%] rounded-2xl rounded-bl-sm bg-portfolio-window px-4 py-3 text-foreground max-phone:px-3 max-phone:py-2.5"
               >
-                Здравствуйте! Хочу обсудить разработку.
+                {dictionary.chat.userMessage}
               </p>
               <p
                 data-contact-message
                 className="ml-auto max-w-[86%] rounded-2xl rounded-br-sm bg-portfolio-normal px-4 py-3 text-white max-phone:px-3 max-phone:py-2.5"
               >
-                Отлично. Какой проект вы планируете запустить?
+                {dictionary.chat.reply}
               </p>
               <p
                 ref={selectedMessageRef}
