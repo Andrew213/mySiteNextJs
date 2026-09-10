@@ -73,9 +73,18 @@ export default function Hero() {
             <p className="hero-intro-item mt-6 max-w-[640px] text-[clamp(15px,1.1vw,18px)] leading-[1.65] opacity-75 max-tablet:mx-auto">
               {dictionary.subtext}
             </p>
-            <div className="hero-intro-item mt-8 flex items-center max-tablet:justify-center">
+            <div className="hero-intro-item mt-8 flex flex-wrap items-center gap-4 max-tablet:justify-center">
               <a href="#contacts" className="button !text-white">
                 {dictionary.discuss}
+              </a>
+              <a
+                href="https://kochanov-web.tech/cv.pdf"
+                download="Andrey-Kochanov-CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button whitespace-nowrap !text-white"
+              >
+                {dictionary.downloadCv}
               </a>
             </div>
             <ul className="hero-intro-item mt-10 flex-wrap justify-center gap-2.5 [display:none] max-tablet:flex ">

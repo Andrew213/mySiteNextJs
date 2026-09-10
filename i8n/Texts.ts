@@ -23,6 +23,7 @@ export const HeroText = {
     subtext:
       "I build modern web applications - from interfaces and business logic to API, Web3, and third-party integrations.",
     discuss: "Discuss project",
+    downloadCv: "Download CV",
   },
   ru: {
     develop: "Разрабатываю сайты",
@@ -31,6 +32,7 @@ export const HeroText = {
     subtext:
       "Создаю современные веб-приложения - от интерфейса и бизнес-логики до интеграций с API, Web3 и внешними сервисами.",
     discuss: "Обсудить проект",
+    downloadCv: "Скачать CV",
   },
 };
 
@@ -338,6 +340,7 @@ export const ContactSectionText = {
 export const FooterSectionText = {
   en: {
     title: "Go to",
+    downloadCv: "Download CV",
     navItems: [
       { label: "About me", target: "hero" },
       { label: "Projects", target: "projects" },
@@ -348,6 +351,7 @@ export const FooterSectionText = {
   },
   ru: {
     title: "Перейти к",
+    downloadCv: "Скачать CV",
     navItems: [
       { label: "Обо мне", target: "hero" },
       { label: "Работы", target: "projects" },

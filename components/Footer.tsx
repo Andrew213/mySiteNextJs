@@ -43,6 +43,16 @@ export default function Footer() {
           </nav>
 
           <div className="flex shrink-0 items-center gap-4">
+            <a
+              href="https://kochanov-web.tech/cv.pdf"
+              download="Andrey-Kochanov-CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="whitespace-nowrap rounded-full border border-(--border) bg-portfolio-window px-4 py-2.5 font-comfortaa-semibold text-xs text-foreground transition-colors duration-300 hover:border-portfolio-normal hover:text-portfolio-link max-mobile:text-sm"
+            >
+              {dictionary.downloadCv}
+            </a>
+
             <input
               type="checkbox"
               id="footerThemeSwitch"
