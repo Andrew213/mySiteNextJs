@@ -74,7 +74,10 @@ export default function Hero() {
               {dictionary.subtext}
             </p>
             <div className="hero-intro-item mt-8 flex flex-wrap items-center gap-4 max-tablet:justify-center">
-              <a href="#contacts" className="button !text-white">
+              <a
+                href="#contacts"
+                className="button !text-white max-mobile:w-[210px] max-mobile:mb-3"
+              >
                 {dictionary.discuss}
               </a>
               <a
@@ -82,7 +85,7 @@ export default function Hero() {
                 download="Andrey-Kochanov-CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="button whitespace-nowrap !text-white"
+                className="button whitespace-nowrap !text-white max-mobile:w-[210px]"
               >
                 {dictionary.downloadCv}
               </a>

@@ -42,13 +42,13 @@ export default function Footer() {
             </ul>
           </nav>
 
-          <div className="flex shrink-0 items-center gap-4">
+          <div className="flex shrink-0 flex-wrap items-center justify-center gap-4 max-mobile:w-full">
             <a
               href="https://kochanov-web.tech/cv.pdf"
               download="Andrey-Kochanov-CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="whitespace-nowrap rounded-full border border-(--border) bg-portfolio-window px-4 py-2.5 font-comfortaa-semibold text-xs text-foreground transition-colors duration-300 hover:border-portfolio-normal hover:text-portfolio-link max-mobile:text-sm"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-(--border) bg-portfolio-window px-4 py-2.5 font-comfortaa-semibold text-xs text-foreground transition-colors duration-300 hover:border-portfolio-normal hover:text-portfolio-link max-mobile:text-sm"
             >
               {dictionary.downloadCv}
             </a>
