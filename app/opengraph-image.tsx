@@ -10,6 +10,11 @@ export const contentType = "image/png";
 export default async function OpenGraphImage() {
   const portrait = await readFile(join(process.cwd(), "public/me-light.png"));
   const portraitSrc = `data:image/png;base64,${portrait.toString("base64")}`;
+  const services = [
+    ["01", "Web sites", "From idea to launch"],
+    ["02", "Telegram Mini Apps", "Bots · Integrations · Features"],
+    ["03", "Custom web platforms", "Business logic · API · UX"],
+  ];
 
   return new ImageResponse(
     (
@@ -22,7 +27,7 @@ export default async function OpenGraphImage() {
           overflow: "hidden",
           color: "#ffffff",
           background:
-            "radial-gradient(circle at 82% 48%, #5c0be0 0%, #2a0a57 26%, transparent 48%), linear-gradient(135deg, #120824 0%, #1d0b38 55%, #120824 100%)",
+            "radial-gradient(circle at 92% 18%, rgba(122, 35, 255, .78) 0%, rgba(91, 18, 205, .46) 17%, transparent 42%), radial-gradient(circle at 82% 82%, rgba(92, 30, 255, .46) 0%, transparent 36%), linear-gradient(135deg, #0b0715 0%, #160d2b 42%, #241050 100%)",
           fontFamily: "Arial, sans-serif",
         }}
       >
@@ -31,66 +36,94 @@ export default async function OpenGraphImage() {
             position: "absolute",
             inset: 0,
             display: "flex",
-            opacity: 0.14,
+            opacity: 0.18,
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,.24) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.24) 1px, transparent 1px)",
-            backgroundSize: "150px 150px",
+              "linear-gradient(rgba(164,92,255,.22) 1px, transparent 1px), linear-gradient(90deg, rgba(164,92,255,.22) 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
           }}
         />
 
         <div
           style={{
-            position: "relative",
-            zIndex: 2,
+            position: "absolute",
+            left: 66,
+            top: 180,
+            display: "flex",
+            width: 230,
+            height: 230,
+            padding: 8,
+            border: "2px solid rgba(174, 68, 255, .78)",
+            borderRadius: "50%",
+            background:
+              "linear-gradient(145deg, rgba(174,68,255,.32), rgba(39,20,76,.92))",
+            boxShadow:
+              "0 0 42px rgba(164, 53, 255, .45), inset 0 0 24px rgba(255,255,255,.08)",
+          }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={portraitSrc}
+            alt=""
+            width="214"
+            height="214"
+            style={{
+              width: "100%",
+              height: "100%",
+              borderRadius: "50%",
+              objectFit: "cover",
+            }}
+          />
+        </div>
+
+        <div
+          style={{
+            position: "absolute",
+            left: 340,
+            top: 170,
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
-            width: 790,
-            padding: "70px 0 70px 76px",
+            width: 770,
           }}
         >
           <div
             style={{
               display: "flex",
-              marginBottom: 26,
-              color: "#b692ff",
-              fontSize: 22,
+              marginBottom: 22,
+              color: "rgba(255,255,255,.75)",
+              fontSize: 17,
               fontWeight: 700,
-              letterSpacing: "0.16em",
               textTransform: "uppercase",
             }}
           >
-            Андрей Кочанов · Fullstack-разработчик
+            Andrey Kochanov · Fullstack Developer
           </div>
 
           <div
             style={{
               display: "flex",
               flexDirection: "column",
-              fontSize: 58,
+              fontSize: 50,
               fontWeight: 700,
-              lineHeight: 1.13,
-              letterSpacing: "-0.035em",
+              lineHeight: 1.08,
             }}
           >
-            <div style={{ display: "flex" }}>Разрабатываю сайты,</div>
-            <div style={{ display: "flex" }}>веб-приложения и</div>
+            <div style={{ display: "flex" }}>Building web solutions</div>
             <div
               style={{
                 display: "flex",
-                color: "#a435ff",
+                color: "#8f35ff",
               }}
             >
-              Telegram-сервисы
+              for real business needs
             </div>
           </div>
 
           <div
             style={{
               display: "flex",
-              marginTop: 30,
-              color: "rgba(255,255,255,.76)",
-              fontSize: 23,
+              marginTop: 24,
+              color: "rgba(255,255,255,.72)",
+              fontSize: 25,
             }}
           >
             React · TypeScript · Next.js · Node.js
@@ -100,70 +133,79 @@ export default async function OpenGraphImage() {
         <div
           style={{
             position: "absolute",
-            right: 62,
-            top: 135,
+            left: 340,
+            right: 66,
+            top: 392,
             display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: 320,
-            height: 320,
-            border: "2px solid rgba(177,113,255,.48)",
-            borderRadius: "50%",
-            background: "rgba(92,11,224,.2)",
+            gap: 22,
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              width: 282,
-              height: 282,
-              overflow: "hidden",
-              border: "9px solid rgba(101,30,255,.55)",
-              borderRadius: "50%",
-            }}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={portraitSrc}
-              alt=""
-              width="282"
-              height="282"
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-            />
-          </div>
-          <div
-            style={{
-              position: "absolute",
-              left: -22,
-              top: 72,
-              display: "flex",
-              width: 60,
-              height: 60,
-              borderRadius: "50%",
-              background: "linear-gradient(180deg, #661eff, #a91eff)",
-            }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              right: -12,
-              bottom: 36,
-              display: "flex",
-              width: 38,
-              height: 38,
-              borderRadius: "50%",
-              background: "linear-gradient(180deg, #661eff, #a91eff)",
-            }}
-          />
+          {services.map(([number, title, caption]) => (
+            <div
+              key={number}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                width: 240,
+                height: 132,
+                padding: "20px 20px 18px",
+                border: "2px solid rgba(177, 52, 255, .9)",
+                borderRadius: 18,
+                background:
+                  "linear-gradient(135deg, rgba(17,10,35,.9), rgba(32,16,68,.82))",
+                boxShadow:
+                  "0 0 28px rgba(145, 45, 255, .28), inset 0 0 18px rgba(255,255,255,.03)",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: 42,
+                  height: 42,
+                  marginBottom: 18,
+                  borderRadius: 8,
+                  color: "#fff",
+                  fontSize: 17,
+                  fontWeight: 700,
+                  background: "linear-gradient(180deg, #8038ff, #bb00ff)",
+                }}
+              >
+                {number}
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  marginBottom: 12,
+                  color: "#ffffff",
+                  fontSize: 24,
+                  fontWeight: 700,
+                  lineHeight: 1,
+                }}
+              >
+                {title}
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  color: "rgba(255,255,255,.68)",
+                  fontSize: 18,
+                }}
+              >
+                {caption}
+              </div>
+            </div>
+          ))}
         </div>
 
         <div
           style={{
             position: "absolute",
-            right: 75,
-            bottom: 42,
+            left: 70,
+            bottom: 48,
             display: "flex",
-            color: "rgba(255,255,255,.58)",
+            color: "rgba(255,255,255,.5)",
             fontSize: 20,
           }}
         >
