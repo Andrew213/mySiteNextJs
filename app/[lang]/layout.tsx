@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 
 const siteUrl = "https://kochanov-web.tech";
 const authorName = "Andrey Kochanov";
-const ogImageUrl = `${siteUrl}/opengraph-image?v=2`;
+const ogImageUrl = `${siteUrl}/opengraph-image?v=3`;
 
 const ogImage = {
   url: ogImageUrl,

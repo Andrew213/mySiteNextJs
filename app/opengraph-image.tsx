@@ -135,9 +135,9 @@ export default async function OpenGraphImage() {
             position: "absolute",
             left: 340,
             right: 66,
-            top: 392,
+            top: 384,
             display: "flex",
-            gap: 22,
+            gap: 18,
           }}
         >
           {services.map(([number, title, caption]) => (
@@ -146,9 +146,9 @@ export default async function OpenGraphImage() {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                width: 240,
-                height: 132,
-                padding: "20px 20px 18px",
+                width: 246,
+                height: 158,
+                padding: "18px 18px 16px",
                 border: "2px solid rgba(177, 52, 255, .9)",
                 borderRadius: 18,
                 background:
@@ -162,9 +162,9 @@ export default async function OpenGraphImage() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  width: 42,
-                  height: 42,
-                  marginBottom: 18,
+                  width: 40,
+                  height: 40,
+                  marginBottom: 14,
                   borderRadius: 8,
                   color: "#fff",
                   fontSize: 17,
@@ -177,11 +177,12 @@ export default async function OpenGraphImage() {
               <div
                 style={{
                   display: "flex",
-                  marginBottom: 12,
+                  height: 54,
+                  marginBottom: 8,
                   color: "#ffffff",
-                  fontSize: 24,
+                  fontSize: 22,
                   fontWeight: 700,
-                  lineHeight: 1,
+                  lineHeight: 1.12,
                 }}
               >
                 {title}
@@ -190,7 +191,8 @@ export default async function OpenGraphImage() {
                 style={{
                   display: "flex",
                   color: "rgba(255,255,255,.68)",
-                  fontSize: 18,
+                  fontSize: 16,
+                  lineHeight: 1.22,
                 }}
               >
                 {caption}
