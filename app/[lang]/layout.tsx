@@ -5,15 +5,22 @@ import { notFound } from "next/navigation";
 
 const siteUrl = "https://kochanov-web.tech";
 const authorName = "Andrey Kochanov";
-const ogImageUrl = `${siteUrl}/opengraph-image?v=3`;
+const ogImageVersion = "v=5";
 
-const ogImage = {
-  url: ogImageUrl,
-  secureUrl: ogImageUrl,
-  width: 1200,
-  height: 630,
-  alt: "Андрей Кочанов — разработка сайтов, веб-приложений и Telegram-сервисов",
-  type: "image/png",
+const getOgImage = (lang: "ru" | "en") => {
+  const ogImageUrl = `${siteUrl}/${lang}/og-image?${ogImageVersion}`;
+
+  return {
+    url: ogImageUrl,
+    secureUrl: ogImageUrl,
+    width: 1200,
+    height: 630,
+    alt:
+      lang === "ru"
+        ? "Андрей Кочанов — разработка сайтов, веб-приложений и Telegram-сервисов"
+        : "Andrey Kochanov — websites, web apps, and Telegram services",
+    type: "image/png",
+  };
 };
 
 const sharedMetadata = {
@@ -53,6 +60,8 @@ export async function generateMetadata({
   }
 
   if (lang === "en") {
+    const ogImage = getOgImage("en");
+
     return {
       ...sharedMetadata,
 
@@ -104,6 +113,8 @@ export async function generateMetadata({
       },
     };
   }
+
+  const ogImage = getOgImage("ru");
 
   return {
     ...sharedMetadata,
